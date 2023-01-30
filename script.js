@@ -12,6 +12,7 @@ function hello_world() {
 }
 
 function speak_text(txt) {
+    document.getElementById("char_count").innerHTML = `${txt.length} chars`;
     addText('sayText(txt,3,1,3)')
     sayText(txt,3,1,3)
 }
