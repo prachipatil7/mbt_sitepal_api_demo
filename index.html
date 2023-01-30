@@ -16,7 +16,12 @@
           <div>
             <div>
               <p>Audio Control</p>
-              <button onclick="tell_story()">Speak</button>     
+              <button onclick="hello_world()">Hello World</button>     
+              <br> <br>
+              <input type="text" id="textToSay">
+              <button onclick="speak_text(textToSay.value)">Start</button> 
+              <button onclick="freezeToggle()">Pause/Play</button>
+              <button onclick="stopSpeech()">Stop</button>    
             </div>
             <div>
               <p>Gaze Control</p>
