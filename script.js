@@ -1,7 +1,23 @@
+var EFFECT = "Default";
+var VOICE = new Array(3, 1, 3);
+function set_voice(voiceOption){
+    addText(`set_voice(${voiceOption})`)
+    if (voiceOption == 1){
+        VOICE[2] = 3;
+    }
+    else {
+        VOICE[2] = 2;
+    }
+}
+
+function set_effect(effect){
+    addText(`set_voice("${effect}")`)
+    EFFECT = effect;
+}
 
 function addText(txt){
     document.getElementById("demo_steps").innerHTML += `<p>${txt}</p>`;
-   }
+}
 
 function hello_world() {
     speak_text('Hello World!')
@@ -9,8 +25,33 @@ function hello_world() {
 
 function speak_text(txt) {
     document.getElementById("char_count").innerHTML = `${txt.length} chars`;
-    addText('sayText(txt,3,1,3)')
-    sayText(txt,3,1,3)
+
+    switch(EFFECT) {
+        case "Default":
+            addText(`sayText(txt,3,1,${VOICE[2]})`)
+            sayText(txt,3,1,VOICE[2])
+            break;
+        case "Robotic":
+            addText(`sayText(txt,3,1,${VOICE[2]},\'R\',3)`)
+            sayText(txt,3,1,VOICE[2],'R',3)
+            break;
+        case "Reverb":
+            addText(`sayText(txt,3,1,${VOICE[2]},\'T\',2)`)
+            sayText(txt,3,1,VOICE[2],'T',2)
+            break;
+        case "Echo":
+            addText(`sayText(txt,3,1,${VOICE[2]},\'T\',1)`)
+            sayText(txt,3,1,VOICE[2],'T',1)
+            break;
+        case "Phase":
+            addText(`sayText(txt,3,1,${VOICE[2]},\'T\',4)`)
+            sayText(txt,3,1,VOICE[2],'T',4)
+            break;
+        case "Whisper":
+            addText(`sayText(txt,3,1,${VOICE[2]},\'W\',3)`)
+            sayText(txt,3,1,VOICE[2],'W',3)
+            break;
+    }
 }
 
 function change_bg() {

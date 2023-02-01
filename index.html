@@ -17,6 +17,18 @@
           <div>
             <div id="audio_control">
               <p><b>Audio Control</b></p>
+              <button onclick="set_voice(1)">Sample Voice 1</button>
+              <button onclick="set_voice(2)">Sample Voice 2</button>    
+              <select name="select2" id="select2" size="1" class="form-control w-15 d-inline">
+					      <option value="Default" selected>Select voice effect</option>
+                <option value="Robotic" >Robotic</option>
+                <option value="Reverb" >Reverb</option>
+                <option value="Echo" >Echo</option>
+                <option value="Phase" >Phase</option>
+                <option value="Whisper" >Whisper</option>
+					    </select>
+              <button onclick="set_effect(select2.value)">Set Effect</button>
+              <p>Note: "Robotic", and "Whisper" at any of 3 levels, can theoretically be combined with any of the other effects.</p>
               <button onclick="hello_world()">Hello World</button>     
               <br> <br>
               <textarea id="textToSay"></textarea>
