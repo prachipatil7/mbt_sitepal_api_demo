@@ -33,6 +33,13 @@
               <button onclick="follow_cursor(0)">Stop Follow Cursor</button>
 
             </div>
+            <div id="bg_control">
+              <p><b>Background Control</b></p>
+              <button onclick="setBackground('Bridge')">Bridge</button>  
+              <button onclick="setBackground('Office 1')">Office</button>  
+              <button onclick="change_bg()">NU</button>
+              <button onclick="setBackground()">Clear</button>  
+            </div>
             <div id="emotion_control">
               <p><b>Emotion Control</b></p>
 					    <select name="select1" id="select1" size="1" class="form-control w-15 d-inline">
@@ -57,11 +64,13 @@
             <div id="function_calls">
               <p><b>Function Calls</b></p>
               <button onclick="clearDiv()">Clear</button>
+              <div id="demo_steps" style="width: 400px;">
+              </div>
             </div>
-            <div id="demo_steps" style="width: 400px;">
-            </div>
+            
+            
           </div>
-          <div>
+          <div id="sitepal_window">
             <script type="text/javascript" >
               AC_VHost_Embed(8673402,600,800,"",1,0,2756267,0,1,0,"j5N635F3XFbcJYjtVsKkI1o0iBGmqgNv",0,0);
             </script>
